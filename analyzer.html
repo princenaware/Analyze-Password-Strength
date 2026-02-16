@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer – Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+<header class="site-header">
+    <div class="logo">🔐 PassGuard</div>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="analyzer.html" class="active">Analyzer</a>
+        <a href="tips.html">Tips</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">☀️</button>
+</header>
+
+<main class="main-container">
+    <section class="tool-card">
+        <div class="header-row">
+            <h1>Password Strength Analyzer</h1>
+        </div>
+
+        <div class="form-group">
+            <label for="passwordInput">Enter Your Password</label>
+            <div class="password-input-wrapper">
+                <input type="password" id="passwordInput" placeholder="Type your password here...">
+                <button class="toggle-password" id="togglePassword" type="button" title="Show/Hide password">👁️</button>
+            </div>
+        </div>
+
+        <div class="strength-meter">
+            <div class="strength-bar" id="strengthBar"></div>
+        </div>
+        <div class="strength-text">
+            <span id="strengthText">Enter a password</span>
+        </div>
+
+        <div class="suggestion-text" id="suggestionText">
+            Start typing to see personalized suggestions to improve your password.
+        </div>
+
+        <div class="crack-time-text" id="crackTimeText">
+            Estimated time to crack (brute force): –
+        </div>
+
+        <div class="form-group">
+            <label>Password Requirements</label>
+            <div class="requirements">
+                <div class="requirement" id="req-length">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">At least 8 characters (12+ recommended)</div>
+                </div>
+                <div class="requirement" id="req-uppercase">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">Contains uppercase letter (A–Z)</div>
+                </div>
+                <div class="requirement" id="req-lowercase">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">Contains lowercase letter (a–z)</div>
+                </div>
+                <div class="requirement" id="req-number">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">Contains number (0–9)</div>
+                </div>
+                <div class="requirement" id="req-special">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">Contains special character (!@#$%^&*)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-generate" id="generateBtn">Generate Strong Password</button>
+            <button class="btn-copy" id="copyBtn" style="display: none;">Copy to Clipboard</button>
+        </div>
+
+        <div class="generated-password-section" id="generatedSection">
+            <div class="generated-password-label">Generated Password:</div>
+            <div class="generated-password-text" id="generatedPassword"></div>
+        </div>
+
+        <p class="helper-link">
+            Want to learn how to craft better passwords? <a href="tips.html">Read the tips page.</a>
+        </p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>🔒 Your password is analyzed in your browser and never sent anywhere.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
